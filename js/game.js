@@ -8,7 +8,8 @@ const characters = [
     'moto',
     'navio',
     'onibus',
-    'planeta',   
+    'planeta',  
+    'bike', 
 ];
 
 let firstcard = null;
@@ -23,7 +24,7 @@ const createElement = (tag, className) => {
 
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
-    if (disabledCards.length === 16) {
+    if (disabledCards.length === 18) {
         clearInterval(loop);
         alert('Parabéns!!! Você completou o game!');
     }
@@ -89,5 +90,5 @@ const loadGame = () => {
 }
 
 window.onload = () => {
-    loadGame();    
+    loadGame();  
 }

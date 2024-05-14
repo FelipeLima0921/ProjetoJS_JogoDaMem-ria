@@ -14,11 +14,12 @@ video {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 15px;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 150px;
 }
 
 .card {
