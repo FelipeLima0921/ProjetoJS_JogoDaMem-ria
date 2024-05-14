@@ -1,0 +1,173 @@
+body{
+    margin: 0;
+    background: #000;
+}
+video{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.login-form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
+
+.login_header{
+
+    text-shadow: #636019 4px 3px 4px;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px;
+    text-shadow: 4px 4px 4px rgba(255, 38, 0, 0.493);
+    
+}
+
+.login_header h1{
+    color: #9B9734;
+    font-size:  1.6em;
+    margin-bottom: 15px;
+}
+
+.login_button {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    color: #fff;
+    background-color: #0000009b ;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    text-shadow: 
+      0 0 5px rgba(0, 255, 255, 0.8),
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 0 20px rgba(0, 255, 255, 0.4),
+      0 0 40px rgba(0, 255, 255, 0.2),
+      0 0 80px rgba(0, 255, 255, 0.1);
+    box-shadow: 
+      0 0 5px rgba(0, 255, 255, 0.8),
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 0 20px rgba(0, 255, 255, 0.4),
+      0 0 40px rgba(0, 255, 255, 0.2),
+      0 0 80px rgba(0, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    outline: none;
+    transition: transform 0.3s;
+  }
+.login_button:hover{
+    transform: scale(1.05);
+}
+.login_button::before {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: rgba(0, 255, 255, 0.1);
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s ease-in-out;
+    border-radius: 5px;
+  }
+
+.login_button:hover::before {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+
+.login_button:active::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+.login_button:active {
+    box-shadow: 
+      0 0 10px rgba(0, 255, 255, 0.8),
+      0 0 20px rgba(0, 255, 255, 0.6),
+      0 0 40px rgba(0, 255, 255, 0.4),
+      0 0 80px rgba(0, 255, 255, 0.2),
+      0 0 160px rgba(0, 255, 255, 0.1);
+  }
+
+
+  .title{
+    position: relative;
+    font-size: 50px;
+    margin-left: 50px;
+    letter-spacing: 5px;
+    color: rgba(207, 207, 207);
+    text-shadow: 
+      0px 0px 1px rgb(167, 167, 167),
+      0px 1px 1px rgb(167, 167, 167),
+      0px 2px 1px rgb(167, 167, 167),
+      1px 1px 1px rgb(167, 167, 167),
+      1px 2px 1px rgb(167, 167, 167),
+      1px 3px 1px rgb(167, 167, 167),
+      2px 2px 1px rgb(167, 167, 167),
+      2px 3px 1px rgb(167, 167, 167),
+      2px 4px 1px rgb(167, 167, 167),
+      1px 10px 30px rgba(0, 0, 0, 0.8),
+      1px 10px 70px rgba(0, 0, 0, 0.8),
+      0px 5px 5px rgba(0, 0, 0, 0.8),
+      -5px 5px 20px rgba(0, 0, 0, 0.8),
+      5px 5px 20px rgba(0, 0, 0, 0.8),
+      1px 1px 120px rgba(255, 255, 255, 0.5);
+    
+}
+
+.title::after {
+    content: "Jogo da Memória";
+    font-size: 50px;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 0px 0px 100px rgba(11, 124, 199, 0.5);
+    animation:  cycle 10s linear infinite;
+
+}
+
+@keyframes cycle{
+    0% {text-shadow: 0px 0px 100px rgba(11, 124, 199, 0.5)}
+    20% {text-shadow: 0px 0px 100px rgba(168, 11, 199, 0.5)}
+    40% {text-shadow: 0px 0px 100px rgba(11, 199, 96, 0.5)}
+    60% {text-shadow: 0px 0px 100px rgba(199, 11, 11, 0.5)}
+    80% {text-shadow: 0px 0px 100px rgba(199, 96, 11, 0.5)}
+}
+
+
+.neon-button {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    color: #fff;
+    background: none;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    text-shadow: 
+      0 0 5px rgba(0, 255, 255, 0.8),
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 0 20px rgba(0, 255, 255, 0.4),
+      0 0 40px rgba(0, 255, 255, 0.2),
+      0 0 80px rgba(0, 255, 255, 0.1);
+    box-shadow: 
+      0 0 5px rgba(0, 255, 255, 0.8),
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 0 20px rgba(0, 255, 255, 0.4),
+      0 0 40px rgba(0, 255, 255, 0.2),
+      0 0 80px rgba(0, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    outline: none;
+  }
