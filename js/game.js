@@ -116,7 +116,8 @@ const startTimer = () => {
         const currentTime = parseInt(timer.innerHTML);
         if (currentTime > 0) {
             timer.innerHTML = currentTime - 1;
-        } else {
+        } 
+        else {
             reiniciarPagina(true);
         }
     }, 1000);
