@@ -3,7 +3,6 @@ body {
     background: #000;
 }
 
-
 video {
     position: absolute;
     z-index: -1;
