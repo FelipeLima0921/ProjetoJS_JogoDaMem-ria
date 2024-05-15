@@ -1,4 +1,5 @@
 const grid = document.querySelector('.grid');
+const timer = document.querySelector('.timer');
 
 const characters = [
     'carro', 
@@ -89,6 +90,24 @@ const loadGame = () => {
     });
 }
 
+function reiniciarPagina(condicao) {
+    if (condicao) {
+        window.location.reload();
+    }
+}
+
+const startTimer = () => {
+    loop = setInterval(() => {
+        const currentTime = parseInt(timer.innerHTML);
+        if (currentTime > 0) {
+            timer.innerHTML = currentTime - 1;
+        } else {
+            reiniciarPagina(true);
+        }
+    }, 1000);
+}
+
 window.onload = () => {
+    startTimer();
     loadGame();  
 }
