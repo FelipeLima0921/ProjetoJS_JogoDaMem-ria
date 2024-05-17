@@ -103,6 +103,18 @@ const loadGame = () => {
         const card = createCard(character);
         grid.appendChild(card);
     });
+    showallCards();
+}
+
+const showallCards = () => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card) => card.classList.add('reveal-card'));
+    setTimeout(hideallCards, 3000);
+}
+
+const hideallCards = () => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card) => card.classList.remove('reveal-card'));
 }
 
 function reiniciarPagina(condicao) {

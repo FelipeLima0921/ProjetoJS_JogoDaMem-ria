@@ -64,7 +64,7 @@ h1 {
     position: relative;
     transition: all 400ms ease;
     transform-style: preserve-3d;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
 }
 
 .face {
@@ -93,7 +93,7 @@ h1 {
 
 .disabled-card {
     filter: saturate(0);
-    opacity: 0.5;
+    opacity: 0.2;
 }
 
 @media screen and (max-width:920px) {
