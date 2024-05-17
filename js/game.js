@@ -1,6 +1,6 @@
 const grid = document.querySelector('.grid');
 const timer = document.querySelector('.timer');
-//const flipSound = document.getElementById('flip-sound');
+const flipSound = document.getElementById('flip-sound');
 const matchSound = document.getElementById('match-sound');
 const gameSound = document.getElementById('game-sound');
 
@@ -27,9 +27,9 @@ function playGameSound() {
     gameSound.play();
 }
 
-/*function playFlipSound() {
+function playFlipSound() {
     flipSound.play();
-}*/
+}
 
 function playMatchSound() {
     matchSound.play();
@@ -77,7 +77,7 @@ const revealCard = ({target}) => {
     if (firstcard === null) {
         target.parentNode.classList.add('reveal-card');
         firstcard = target.parentNode;
-        //playFlipSound();
+        playFlipSound();
     } 
     else if (secondcard === null) {
         target.parentNode.classList.add('reveal-card');
