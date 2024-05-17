@@ -1,7 +1,8 @@
 const grid = document.querySelector('.grid');
 const timer = document.querySelector('.timer');
-const flipSound = document.getElementById('flip-sound');
+//const flipSound = document.getElementById('flip-sound');
 const matchSound = document.getElementById('match-sound');
+const gameSound = document.getElementById('game-sound');
 
 const characters = [
     'carro', 
@@ -19,11 +20,16 @@ let firstcard = null;
 let secondcard = null;
 let loop = null;
 flipSound.volume = 0.5;
-matchSound.volume= 1;
+matchSound.volume = 0.5;
+gameSound.volume = 0.25;
 
-function playFlipSound() {
-    flipSound.play();
+function playGameSound() {
+    gameSound.play();
 }
+
+/*function playFlipSound() {
+    flipSound.play();
+}*/
 
 function playMatchSound() {
     matchSound.play();
@@ -71,7 +77,7 @@ const revealCard = ({target}) => {
     if (firstcard === null) {
         target.parentNode.classList.add('reveal-card');
         firstcard = target.parentNode;
-        playFlipSound();
+        //playFlipSound();
     } 
     else if (secondcard === null) {
         target.parentNode.classList.add('reveal-card');
@@ -104,6 +110,7 @@ const loadGame = () => {
         grid.appendChild(card);
     });
     showallCards();
+    playGameSound();
 }
 
 const showallCards = () => {
