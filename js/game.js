@@ -168,8 +168,16 @@ const updateRanking = () => {
     document.getElementById('ranking').innerHTML = rankingTable;
 }
 
+const resetRanking = () => {
+    localStorage.removeItem('ranking');
+    updateRanking();
+    alert('Ranking resetado com sucesso!');
+}
+
 window.onload = () => {
     startTimer();
     loadGame();  
     updateRanking();
+    const resetButton = document.getElementById('reset-button');
+    resetButton.addEventListener('click', resetRanking);
 }
