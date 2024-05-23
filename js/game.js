@@ -11,8 +11,8 @@ const characters = [
     'moto',
     'navio',
     'onibus',
-    'planeta',  
-    'bike', 
+    'planeta',
+    'bike',
 ];
 
 let firstcard = null;
@@ -39,7 +39,10 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
     if (disabledCards.length === 18) {
         clearInterval(loop);
+        const timeElapsed = 45 - parseInt(timer.innerHTML);
         alert('Parabéns!!! Você ganhou um brinde!');
+        saveTime(timeElapsed);
+        updateRanking();
     }
 }
 
@@ -134,7 +137,39 @@ const startTimer = () => {
     }, 1000);
 }
 
+const saveTime = (time) => {
+    let ranking = JSON.parse(localStorage.getItem('ranking')) || [];
+    ranking.push(time);
+    ranking.sort((a, b) => a - b);
+    if (ranking.length > 10) {
+        ranking.pop();
+    }
+    localStorage.setItem('ranking', JSON.stringify(ranking));
+}
+
+const getRanking = () => {
+    return JSON.parse(localStorage.getItem('ranking')) || [];
+}
+
+const updateRanking = () => {
+    let ranking = getRanking();
+    let rankingTable = `<table>
+        <tr>
+            <th>Posição</th>
+            <th>Tempo</th>
+        </tr>`;
+    ranking.forEach((time, index) => {
+        rankingTable += `<tr>
+            <td>${index + 1}</td>
+            <td>${time.toFixed(2)}</td>
+        </tr>`;
+    });
+    rankingTable += `</table>`;
+    document.getElementById('ranking').innerHTML = rankingTable;
+}
+
 window.onload = () => {
     startTimer();
     loadGame();  
+    updateRanking();
 }
